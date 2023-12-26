@@ -36,7 +36,7 @@ export const FormComponent = styled.div`
   }
 
   form {
-    width: 38rem;
+    width: 40rem;
     background-color: red;
     display: flex;
     flex-direction: column;
