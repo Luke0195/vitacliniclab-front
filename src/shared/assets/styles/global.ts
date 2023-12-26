@@ -13,7 +13,7 @@ export default createGlobalStyle`
   min-height: 100%;
  }
 
- body{
+ html{
   font-size: 62.5%;
  }
 `
