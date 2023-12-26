@@ -1,8 +1,7 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from '@app/shared/interfaces'
 import * as S from './styles'
-export interface ComponentProps extends PropsWithChildren {}
 
-export function InputWrapper(props: ComponentProps) {
+export function InputWrapper(props: PropsWithChildren) {
   const { children } = props
   return <S.InputWrapperComponent>{children}</S.InputWrapperComponent>
 }

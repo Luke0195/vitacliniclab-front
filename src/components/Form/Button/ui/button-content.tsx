@@ -1,8 +1,6 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from '@app/shared/interfaces'
 
-interface ComponentProps extends PropsWithChildren {}
-
-export function ButtonContent(props: ComponentProps) {
+export function ButtonContent(props: PropsWithChildren) {
   const { children } = props
   return children
 }

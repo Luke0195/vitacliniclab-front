@@ -1,9 +1,7 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from '@app/shared/interfaces'
 import * as S from './styles'
 
-interface InputFieldProps extends PropsWithChildren {}
-
-export function InputField(props: InputFieldProps) {
+export function InputField(props: PropsWithChildren) {
   const { children } = props
   return <S.InputFieldComponent> {children} </S.InputFieldComponent>
 }

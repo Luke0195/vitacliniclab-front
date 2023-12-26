@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren } from '@app/shared/interfaces'
 import * as S from './styles'
 interface ComponentProps
   extends React.DetailedHTMLProps<
