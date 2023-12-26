@@ -37,9 +37,24 @@ export const FormComponent = styled.div`
 
   form {
     width: 40rem;
-    background-color: red;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  span {
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 1.5rem;
+    font-family: 'Poppins';
+    color: #a500ff;
+    cursor: pointer;
+    transition: all 1s ease-out;
+
+    &:hover {
+      opacity: 0.6;
+      text-decoration: underline;
+    }
   }
 `

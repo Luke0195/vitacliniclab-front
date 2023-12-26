@@ -1,5 +1,5 @@
 import * as S from '../../ui/styles'
-import { InputRoot } from '@app/components/Form'
+import { ButtonRoot, InputRoot } from '@app/components/Form'
 import { FiMail, FiLock } from 'react-icons/fi'
 
 export function Form() {
@@ -18,19 +18,21 @@ export function Form() {
             />
           </InputRoot.InputField>
         </InputRoot.InputWrapper>
-        <div>
-          <label> Senha </label>
-          <div>
-            <FiLock size={20} color="#c8c8c8" />
-            <input
+        <InputRoot.InputWrapper>
+          <InputRoot.InputLabel content="Senha" />
+          <InputRoot.InputField>
+            <InputRoot.InputIcon icon={<FiLock size={20} color="#c8c8c8" />} />
+            <InputRoot.Input
               type="email"
               name="email"
               placeholder="Entre com o seu email"
             />
-          </div>
-        </div>
+          </InputRoot.InputField>
+        </InputRoot.InputWrapper>
         <span> Esqueceu a senha ?</span>
-        <button> Entrar </button>
+        <ButtonRoot.ButtonWrapper color="#a500ff" disabled={true}>
+          Entrar
+        </ButtonRoot.ButtonWrapper>
       </form>
     </S.FormComponent>
   )

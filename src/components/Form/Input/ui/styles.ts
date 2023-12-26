@@ -2,12 +2,16 @@ import { styled } from '@app/libs/styled-components'
 
 export const InputWrapperComponent = styled.div`
   width: 100%;
-  background-color: yellow;
   display: flex;
   flex-direction: column;
 `
 
-export const InputLabelComponent = styled.label``
+export const InputLabelComponent = styled.label`
+  color: #c8c8c8;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: #a4a6a5;
+`
 
 export const InputFieldComponent = styled.div`
   display: flex;
