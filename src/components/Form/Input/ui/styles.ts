@@ -31,4 +31,5 @@ export const InputComponent = styled.input`
   border: 0;
   height: 4.2rem;
   width: 100%;
+  color: #a4a6a5;
 `

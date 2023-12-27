@@ -1,13 +1,40 @@
+import { useForm, Controller } from '@app/libs/react-hook-form'
+import { yupResolver } from '@app/libs/yup'
+import { AuthenticationParams } from '@app/entities/authentication/model'
+import { schema } from '../../'
 import * as S from '../../ui/styles'
-import { ButtonRoot, InputRoot } from '@app/components/Form'
-import { FiMail, FiLock } from 'react-icons/fi'
-import { motion } from 'framer-motion'
+import { ButtonRoot, InputRoot, FieldError } from '@app/components/Form'
 import { makeAnimation } from '@app/shared/animations'
 
+import { FiMail, FiLock } from 'react-icons/fi'
+import { motion } from 'framer-motion'
+
 export function Form() {
+  const {
+    handleSubmit,
+    control,
+    formState: {
+      isValid,
+      errors: { email, password },
+    },
+  } = useForm<AuthenticationParams>({
+    mode: 'onBlur',
+    resolver: yupResolver(schema()),
+    reValidateMode: 'onChange',
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  })
+
+  const onSubmit = (data: AuthenticationParams) => {
+    console.log(data)
+  }
+
+  console.log(isValid)
   return (
     <S.FormComponent>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <h2> Faça seu Login</h2>
         <motion.div
           {...makeAnimation(
@@ -22,14 +49,23 @@ export function Form() {
               <InputRoot.InputIcon
                 icon={<FiMail size={20} color="#c8c8c8" />}
               />
-              <InputRoot.Input
-                type="email"
+              <Controller
                 name="email"
-                placeholder="Entre com o seu email"
+                control={control}
+                render={({ field }) => (
+                  <InputRoot.Input
+                    type="email"
+                    placeholder="Entre com o seu email"
+                    {...field}
+                  />
+                )}
               />
             </InputRoot.InputField>
           </InputRoot.InputWrapper>
         </motion.div>
+
+        {email && <FieldError message={email.message} />}
+
         <motion.div
           {...makeAnimation(
             { x: 30, opacity: 0.3 },
@@ -43,14 +79,23 @@ export function Form() {
               <InputRoot.InputIcon
                 icon={<FiLock size={20} color="#c8c8c8" />}
               />
-              <InputRoot.Input
-                type="email"
-                name="email"
-                placeholder="Entre com o seu email"
+              <Controller
+                name="password"
+                control={control}
+                render={({ field }) => (
+                  <InputRoot.Input
+                    type="password"
+                    placeholder="Entre com sua senha"
+                    {...field}
+                  />
+                )}
               />
             </InputRoot.InputField>
           </InputRoot.InputWrapper>
         </motion.div>
+
+        {password && <FieldError message={password.message} />}
+
         <motion.div
           {...makeAnimation(
             { x: 0, opacity: 0.1 },
@@ -59,6 +104,7 @@ export function Form() {
           )}>
           <span> Esqueceu a senha ?</span>
         </motion.div>
+
         <motion.div
           style={{ width: '100%' }}
           {...makeAnimation(
@@ -66,7 +112,7 @@ export function Form() {
             { y: 0, opacity: 1 },
             { duration: 2 },
           )}>
-          <ButtonRoot.ButtonWrapper color="#a500ff" disabled={true}>
+          <ButtonRoot.ButtonWrapper color="#a500ff" disabled={!isValid}>
             Entrar
           </ButtonRoot.ButtonWrapper>
         </motion.div>
