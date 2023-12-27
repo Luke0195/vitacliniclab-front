@@ -46,7 +46,12 @@ export function Form() {
             </InputRoot.InputField>
           </InputRoot.InputWrapper>
         </motion.div>
-        <span> Esqueceu a senha ?</span>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 2 }}>
+          <span> Esqueceu a senha ?</span>
+        </motion.div>
         <motion.div
           style={{ width: '100%' }}
           initial={{ y: 30, opacity: 0.3 }}

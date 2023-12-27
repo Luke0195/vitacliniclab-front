@@ -8,7 +8,7 @@ export function Info() {
         initial={{ y: -30, opacity: 0.5 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1 }}>
-        <p> O VitaLab é a melhor plataforma para clinicas e consultórios.</p>
+        <p> O VitaLab é a melhor plataforma para clínicas e consultórios.</p>
       </motion.div>
       <motion.div
         initial={{ x: -30, opacity: 0.5 }}
