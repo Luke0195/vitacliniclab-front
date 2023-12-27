@@ -2,6 +2,7 @@ import * as S from '../../ui/styles'
 import { ButtonRoot, InputRoot } from '@app/components/Form'
 import { FiMail, FiLock } from 'react-icons/fi'
 import { motion } from 'framer-motion'
+import { makeAnimation } from '@app/shared/animations'
 
 export function Form() {
   return (
@@ -9,10 +10,12 @@ export function Form() {
       <form>
         <h2> Faça seu Login</h2>
         <motion.div
-          initial={{ x: -30, opacity: 0.5 }}
-          style={{ width: '100%' }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2 }}>
+          {...makeAnimation(
+            { x: -30, opacity: 0.5 },
+            { x: 0, opacity: 1 },
+            { duration: 2 },
+          )}
+          style={{ width: '100%' }}>
           <InputRoot.InputWrapper>
             <InputRoot.InputLabel content="E-mail" />
             <InputRoot.InputField>
@@ -28,10 +31,12 @@ export function Form() {
           </InputRoot.InputWrapper>
         </motion.div>
         <motion.div
-          initial={{ x: 30, opacity: 0.3 }}
-          style={{ width: '100%' }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2 }}>
+          {...makeAnimation(
+            { x: 30, opacity: 0.3 },
+            { x: 0, opacity: 1 },
+            { duration: 2 },
+          )}
+          style={{ width: '100%' }}>
           <InputRoot.InputWrapper>
             <InputRoot.InputLabel content="Senha" />
             <InputRoot.InputField>
@@ -47,16 +52,20 @@ export function Form() {
           </InputRoot.InputWrapper>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2 }}>
+          {...makeAnimation(
+            { x: 0, opacity: 0.1 },
+            { x: 0, opacity: 1 },
+            { duration: 2 },
+          )}>
           <span> Esqueceu a senha ?</span>
         </motion.div>
         <motion.div
           style={{ width: '100%' }}
-          initial={{ y: 30, opacity: 0.3 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 2 }}>
+          {...makeAnimation(
+            { y: 30, opacity: 0.3 },
+            { y: 0, opacity: 1 },
+            { duration: 2 },
+          )}>
           <ButtonRoot.ButtonWrapper color="#a500ff" disabled={true}>
             Entrar
           </ButtonRoot.ButtonWrapper>
