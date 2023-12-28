@@ -8,7 +8,6 @@ import { makeAnimation } from '@app/shared/animations'
 
 import { FiMail, FiLock } from 'react-icons/fi'
 import { motion } from 'framer-motion'
-import { error } from 'console'
 
 export function Form() {
   const {

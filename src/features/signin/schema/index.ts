@@ -6,9 +6,6 @@ export const schema = () => {
       .string()
       .email('Informe um e-mail válido!')
       .required('O campo email é obrigatório!'),
-    password: yup
-      .string()
-      .required('O campo senha é obrigatório')
-      .min(5, 'O mínimo de 5 caracteres!'),
+    password: yup.string().required('O campo senha é obrigatório'),
   })
 }
