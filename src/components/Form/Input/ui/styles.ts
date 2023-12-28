@@ -13,7 +13,7 @@ export const InputLabelComponent = styled.label`
   color: #a4a6a5;
 `
 type InputWrapperProps = {
-  hasError: boolean
+  haserror: boolean
 }
 
 export const InputFieldComponent = styled.div<InputWrapperProps>`
@@ -36,7 +36,7 @@ export const InputFieldComponent = styled.div<InputWrapperProps>`
   }
 
   ${(props) =>
-    props.hasError &&
+    props.haserror &&
     css`
       border-color: red !important;
     `}

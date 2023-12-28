@@ -2,12 +2,12 @@ import { PropsWithChildren } from '@app/shared/interfaces'
 import * as S from './styles'
 
 interface ComponentProps extends PropsWithChildren {
-  hasError: boolean
+  haserror: boolean
 }
 export function InputField(props: ComponentProps) {
-  const { children, hasError } = props
+  const { children, haserror } = props
   return (
-    <S.InputFieldComponent hasError={hasError}>
+    <S.InputFieldComponent haserror={haserror}>
       {children}{' '}
     </S.InputFieldComponent>
   )

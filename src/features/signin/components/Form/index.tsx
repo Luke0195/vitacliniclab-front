@@ -45,7 +45,8 @@ export function Form() {
           style={{ width: '100%' }}>
           <InputRoot.InputWrapper>
             <InputRoot.InputLabel content="E-mail" />
-            <InputRoot.InputField hasError={Boolean(email && email.message)}>
+            <InputRoot.InputField
+              haserror={email && email.message ? true : false}>
               <InputRoot.InputIcon
                 icon={
                   <FiMail
@@ -57,11 +58,12 @@ export function Form() {
               <Controller
                 name="email"
                 control={control}
-                render={({ field }) => (
+                render={({ field, ref }) => (
                   <InputRoot.Input
                     type="email"
                     placeholder="Entre com o seu email"
                     {...field}
+                    ref={ref}
                   />
                 )}
               />
@@ -81,7 +83,9 @@ export function Form() {
           <InputRoot.InputWrapper>
             <InputRoot.InputLabel content="Senha" />
             <InputRoot.InputField
-              hasError={Boolean(password && password.message)}>
+              haserror={
+                password && password.message?.toString() ? true : false
+              }>
               <InputRoot.InputIcon
                 icon={
                   <FiLock
@@ -95,11 +99,13 @@ export function Form() {
               <Controller
                 name="password"
                 control={control}
-                render={({ field }) => (
+                render={({ field, ref }) => (
                   <InputRoot.Input
                     type="password"
+                    autoComplete="off"
                     placeholder="Entre com sua senha"
                     {...field}
+                    ref={ref}
                   />
                 )}
               />
