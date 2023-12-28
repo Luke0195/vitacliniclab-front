@@ -15,8 +15,8 @@ export function Info() {
       </motion.div>
       <motion.div
         {...makeAnimation(
-          { y: -30, opacity: 0.5 },
-          { y: 0, opacity: 1 },
+          { x: -60, opacity: 0.5 },
+          { x: 0, opacity: 1 },
           { duration: 1 },
         )}>
         <p>
