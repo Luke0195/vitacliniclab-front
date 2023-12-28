@@ -1,4 +1,4 @@
-import { styled } from '@app/libs/styled-components'
+import { styled, css } from '@app/libs/styled-components'
 
 export const InputWrapperComponent = styled.div`
   width: 100%;
@@ -12,8 +12,11 @@ export const InputLabelComponent = styled.label`
   line-height: 2.5rem;
   color: #a4a6a5;
 `
+type InputWrapperProps = {
+  hasError: boolean
+}
 
-export const InputFieldComponent = styled.div`
+export const InputFieldComponent = styled.div<InputWrapperProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,6 +27,19 @@ export const InputFieldComponent = styled.div`
   gap: 0.4rem;
   padding: 0 0.8rem;
   margin: 0.8rem 0;
+
+  &:focus-within {
+    border: 1px solid #a500ff;
+    svg {
+      color: #a500ff !important;
+    }
+  }
+
+  ${(props) =>
+    props.hasError &&
+    css`
+      border-color: red !important;
+    `}
 `
 
 export const InputComponent = styled.input`

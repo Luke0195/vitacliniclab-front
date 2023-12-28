@@ -8,6 +8,7 @@ import { makeAnimation } from '@app/shared/animations'
 
 import { FiMail, FiLock } from 'react-icons/fi'
 import { motion } from 'framer-motion'
+import { error } from 'console'
 
 export function Form() {
   const {
@@ -45,9 +46,14 @@ export function Form() {
           style={{ width: '100%' }}>
           <InputRoot.InputWrapper>
             <InputRoot.InputLabel content="E-mail" />
-            <InputRoot.InputField>
+            <InputRoot.InputField hasError={Boolean(email && email.message)}>
               <InputRoot.InputIcon
-                icon={<FiMail size={20} color="#c8c8c8" />}
+                icon={
+                  <FiMail
+                    size={20}
+                    color={`${email && email.message ? 'red' : '#c8c8c8'}`}
+                  />
+                }
               />
               <Controller
                 name="email"
@@ -75,9 +81,17 @@ export function Form() {
           style={{ width: '100%' }}>
           <InputRoot.InputWrapper>
             <InputRoot.InputLabel content="Senha" />
-            <InputRoot.InputField>
+            <InputRoot.InputField
+              hasError={Boolean(password && password.message)}>
               <InputRoot.InputIcon
-                icon={<FiLock size={20} color="#c8c8c8" />}
+                icon={
+                  <FiLock
+                    size={20}
+                    color={`${
+                      password && password.message ? 'red' : '#c8c8c8'
+                    }`}
+                  />
+                }
               />
               <Controller
                 name="password"
