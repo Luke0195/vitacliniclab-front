@@ -1,10 +1,6 @@
 import { styled } from '@app/libs/styled-components'
 
-type ButtonProps = {
-  color: string
-}
-
-export const ButtonWrapperComponent = styled.button<ButtonProps>`
+export const ButtonWrapperComponent = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
