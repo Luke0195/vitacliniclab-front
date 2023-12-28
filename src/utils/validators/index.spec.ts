@@ -1,12 +1,12 @@
-import { isValid } from './index'
+import { validateConditional } from './index'
 describe('Validator', () => {
   test('Should returns true if isValid return true', () => {
-    const result = isValid(true)
+    const result = validateConditional(true)
     expect(result).toBe(true)
   })
 
   test('Should returns false if isValid return false', () => {
-    const result = isValid(false)
+    const result = validateConditional(false)
     expect(result).toBe(false)
   })
 })

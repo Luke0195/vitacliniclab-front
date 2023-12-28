@@ -1,11 +1,12 @@
+import { AuthenticationParams } from '@app/entities/authentication/model'
+import { ButtonRoot, InputRoot, FieldError } from '@app/components/Form'
 import { useForm, Controller } from '@app/libs/react-hook-form'
 import { yupResolver } from '@app/libs/yup'
-import { AuthenticationParams } from '@app/entities/authentication/model'
-import { schema } from '../../'
-import * as S from '../../ui/styles'
-import { ButtonRoot, InputRoot, FieldError } from '@app/components/Form'
+import { validateConditional } from '@app/utils/validators'
 import { makeAnimation } from '@app/shared/animations'
 
+import { schema } from '../../'
+import * as S from '../../ui/styles'
 import { FiMail, FiLock } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 
@@ -46,7 +47,7 @@ export function Form() {
           <InputRoot.InputWrapper>
             <InputRoot.InputLabel content="E-mail" />
             <InputRoot.InputField
-              haserror={email && email.message ? true : false}>
+              haserror={validateConditional(email && email.message)}>
               <InputRoot.InputIcon
                 icon={
                   <FiMail
@@ -83,9 +84,9 @@ export function Form() {
           <InputRoot.InputWrapper>
             <InputRoot.InputLabel content="Senha" />
             <InputRoot.InputField
-              haserror={
-                password && password.message?.toString() ? true : false
-              }>
+              haserror={validateConditional(
+                password && password.message?.toString(),
+              )}>
               <InputRoot.InputIcon
                 icon={
                   <FiLock

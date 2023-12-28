@@ -1,3 +1,3 @@
-export function isValid(conditional: any): boolean {
+export function validateConditional(conditional: any): boolean {
   return conditional
 }
