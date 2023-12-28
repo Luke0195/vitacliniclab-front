@@ -7,7 +7,12 @@ const config: Config = {
 
   coverageDirectory: 'coverage',
   transform: {
-    '^.+\\.ts?$': 'ts-jest',
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
+  modulePaths: ['<rootDir>/src'],
+  moduleNameMapper: {
+    '@app/(.*)': '<rootDir>/src/$1',
+    '\\.scss$': 'identity-obj-proxy',
   },
 
   // An array of regexp pattern strings used to skip coverage collection

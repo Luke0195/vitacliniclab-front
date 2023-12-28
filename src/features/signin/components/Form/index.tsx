@@ -59,7 +59,7 @@ export function Form() {
               <Controller
                 name="email"
                 control={control}
-                render={({ field, ref }) => (
+                render={({ field, ref }: any) => (
                   <InputRoot.Input
                     type="email"
                     placeholder="Entre com o seu email"
@@ -100,7 +100,7 @@ export function Form() {
               <Controller
                 name="password"
                 control={control}
-                render={({ field, ref }) => (
+                render={({ field, ref }: any) => (
                   <InputRoot.Input
                     type="password"
                     autoComplete="off"
