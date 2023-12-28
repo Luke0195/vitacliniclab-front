@@ -16,8 +16,11 @@ export const ButtonWrapperComponent = styled.button<ButtonProps>`
   border: 0;
   background-color: ${(props) => props.color || '#ccc'};
 
-  &:disabled {
-    color: #fff;
-    background-color: #c8c8c8;
+  &:disabled span {
+    color: white !important;
+    cursor: not-allowed;
+    text-decoration: none;
+    display: block;
+    margin: 0;
   }
 `

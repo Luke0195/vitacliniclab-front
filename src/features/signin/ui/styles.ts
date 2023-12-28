@@ -58,3 +58,8 @@ export const FormComponent = styled.div`
     }
   }
 `
+
+export const TextLabel = styled.span`
+  font-size: 1.6rem;
+  color: #fff;
+`

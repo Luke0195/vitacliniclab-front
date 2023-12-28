@@ -5,9 +5,7 @@ interface ComponentProps
       React.ButtonHTMLAttributes<HTMLButtonElement>,
       HTMLButtonElement
     >,
-    PropsWithChildren {
-  color: string
-}
+    PropsWithChildren {}
 
 export function ButtonWrapper(props: ComponentProps) {
   const { children, ...rest } = props

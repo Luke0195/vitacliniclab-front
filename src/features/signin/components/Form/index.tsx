@@ -125,8 +125,8 @@ export function Form() {
             { y: 0, opacity: 1 },
             { duration: 2 },
           )}>
-          <ButtonRoot.ButtonWrapper color="#a500ff" disabled={!isValid}>
-            Entrar
+          <ButtonRoot.ButtonWrapper disabled={!isValid}>
+            <S.TextLabel> Entrar</S.TextLabel>
           </ButtonRoot.ButtonWrapper>
         </motion.div>
       </form>
