@@ -59,7 +59,10 @@ export const FormComponent = styled.div`
   }
 `
 
-export const TextLabel = styled.span`
+export const TextLabel = styled.p`
   font-size: 1.6rem;
   color: #fff;
+  display: block;
+  margin: 0;
+  padding: 0;
 `
